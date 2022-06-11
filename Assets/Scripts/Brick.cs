@@ -12,25 +12,29 @@ public class Brick : MonoBehaviour
 
     void Start()
     {
-        var renderer = GetComponentInChildren<Renderer>();
+        var renderer = GetComponent<Renderer>();
 
         MaterialPropertyBlock block = new MaterialPropertyBlock();
         switch (PointValue)
         {
             case 1 :
                 block.SetColor("_BaseColor", Color.green);
+                block.SetColor("_EmissionColor", Color.green * 1.5f);
                 break;
             case 2:
                 block.SetColor("_BaseColor", Color.yellow);
+                block.SetColor("_EmissionColor", Color.yellow * 1.5f);
                 break;
             case 5:
                 block.SetColor("_BaseColor", Color.blue);
+                block.SetColor("_EmissionColor", Color.blue * 1.5f);
                 break;
             default:
                 block.SetColor("_BaseColor", Color.red);
                 break;
         }
         renderer.SetPropertyBlock(block);
+        DynamicGI.SetEmissive(renderer, block.GetColor("_EmissionColor"));
     }
 
     private void OnCollisionEnter(Collision other)
