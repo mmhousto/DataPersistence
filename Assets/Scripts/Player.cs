@@ -15,25 +15,21 @@ public class Player : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void LoadPlayer(PlayerData data)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        PlayerName = data.playerName;
+        HiScore = data.hiScore;
     }
 
     public void SetPlayerName(string name)
     {
         PlayerName = name;
+        SaveSystem.SavePlayer(Instance);
     }
 
     public void SetHiScore(int newScore)
     {
         HiScore = newScore;
+        SaveSystem.SavePlayer(Instance);
     }
 }

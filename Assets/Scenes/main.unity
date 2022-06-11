@@ -502,6 +502,7 @@ MonoBehaviour:
   LineCount: 6
   Ball: {fileID: 177912862}
   nameLabel: {fileID: 1983840172}
+  hiScoreLabel: {fileID: 2078529056}
   ScoreText: {fileID: 188020406}
   GameOverText: {fileID: 474497238}
 --- !u!1 &455529321
@@ -1479,7 +1480,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Best Score: 0'
+  m_text: 'HiScore: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
